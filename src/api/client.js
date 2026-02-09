@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// API Base URL - use env variable in production, proxy in development
-const API_URL = import.meta.env.VITE_API_URL || "";
+// API Base URL - use env variable in production, fallback to production API
+const API_URL = import.meta.env.VITE_API_URL || "https://api-wilayah-indonesia-backend.vercel.app";
 
 // Create axios instance with base configuration
 const client = axios.create({
