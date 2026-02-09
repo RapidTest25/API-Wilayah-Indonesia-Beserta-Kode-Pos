@@ -14,34 +14,35 @@ REST API lengkap untuk data wilayah administratif Indonesia mulai dari **Provins
 
 ## 📊 Data Statistics
 
-| Data | Jumlah |
-|------|--------|
-| Provinsi | 38 |
-| Kota/Kabupaten | 514 |
-| Kecamatan | 7,277 |
+| Data           | Jumlah |
+| -------------- | ------ |
+| Provinsi       | 38     |
+| Kota/Kabupaten | 514    |
+| Kecamatan      | 7,277  |
 | Kelurahan/Desa | 83,931 |
-| Kode Pos | 81,250 |
+| Kode Pos       | 81,250 |
 
 ---
 
 ## 📡 API Endpoints
 
 ### Base URL
+
 ```
 https://your-api-domain.com/api/v1
 ```
 
 ### Endpoints Overview
 
-| Method | Endpoint | Deskripsi |
-|--------|----------|-----------|
-| GET | `/provinces` | Daftar semua provinsi |
-| GET | `/provinces/:provId/cities` | Kota/Kabupaten dalam provinsi |
-| GET | `/cities/:cityId/districts` | Kecamatan dalam kota |
-| GET | `/districts/:disId/subdistricts` | Kelurahan/Desa dalam kecamatan |
-| GET | `/subdistricts/:subdisId/postal-codes` | Kode pos dalam kelurahan |
-| GET | `/search?q=<query>` | Pencarian wilayah |
-| GET | `/health` | Status API |
+| Method | Endpoint                               | Deskripsi                      |
+| ------ | -------------------------------------- | ------------------------------ |
+| GET    | `/provinces`                           | Daftar semua provinsi          |
+| GET    | `/provinces/:provId/cities`            | Kota/Kabupaten dalam provinsi  |
+| GET    | `/cities/:cityId/districts`            | Kecamatan dalam kota           |
+| GET    | `/districts/:disId/subdistricts`       | Kelurahan/Desa dalam kecamatan |
+| GET    | `/subdistricts/:subdisId/postal-codes` | Kode pos dalam kelurahan       |
+| GET    | `/search?q=<query>`                    | Pencarian wilayah              |
+| GET    | `/health`                              | Status API                     |
 
 ---
 
@@ -52,11 +53,13 @@ https://your-api-domain.com/api/v1
 Mengambil daftar semua provinsi di Indonesia.
 
 **Request:**
+
 ```
 GET /api/v1/provinces
 ```
 
 **Response:**
+
 ```json
 {
   "data": [
@@ -76,33 +79,38 @@ GET /api/v1/provinces
 <summary><b>📝 Contoh Kode</b></summary>
 
 **cURL:**
+
 ```bash
 curl -X GET "http://localhost:3000/api/v1/provinces" \
   -H "Content-Type: application/json"
 ```
 
 **JavaScript (Fetch):**
+
 ```javascript
 fetch("http://localhost:3000/api/v1/provinces")
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error("Error:", error));
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
 ```
 
 **Node.js (Axios):**
-```javascript
-const axios = require('axios');
 
-axios.get('http://localhost:3000/api/v1/provinces')
-  .then(response => {
+```javascript
+const axios = require("axios");
+
+axios
+  .get("http://localhost:3000/api/v1/provinces")
+  .then((response) => {
     console.log(response.data);
   })
-  .catch(error => {
-    console.error('Error:', error.message);
+  .catch((error) => {
+    console.error("Error:", error.message);
   });
 ```
 
 **PHP:**
+
 ```php
 <?php
 $ch = curl_init();
@@ -120,6 +128,7 @@ print_r($data);
 ```
 
 **Python:**
+
 ```python
 import requests
 
@@ -129,6 +138,7 @@ print(data)
 ```
 
 **Java:**
+
 ```java
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -148,6 +158,7 @@ System.out.println(response.body());
 ```
 
 **Go:**
+
 ```go
 package main
 
@@ -178,6 +189,7 @@ func main() {
 Mengambil daftar kota/kabupaten dalam provinsi tertentu.
 
 **Request:**
+
 ```
 GET /api/v1/provinces/:provId/cities
 ```
@@ -188,6 +200,7 @@ GET /api/v1/provinces/:provId/cities
 | provId | integer | Yes | ID provinsi (contoh: 12 untuk Jawa Barat) |
 
 **Response:**
+
 ```json
 {
   "data": [
@@ -208,22 +221,25 @@ GET /api/v1/provinces/:provId/cities
 <summary><b>📝 Contoh Kode</b></summary>
 
 **cURL:**
+
 ```bash
 curl -X GET "http://localhost:3000/api/v1/provinces/12/cities" \
   -H "Content-Type: application/json"
 ```
 
 **JavaScript:**
+
 ```javascript
 const provId = 12; // Jawa Barat
 
 fetch(`http://localhost:3000/api/v1/provinces/${provId}/cities`)
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error("Error:", error));
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
 ```
 
 **Python:**
+
 ```python
 import requests
 
@@ -242,6 +258,7 @@ print(data)
 Mengambil daftar kecamatan dalam kota/kabupaten tertentu.
 
 **Request:**
+
 ```
 GET /api/v1/cities/:cityId/districts
 ```
@@ -252,6 +269,7 @@ GET /api/v1/cities/:cityId/districts
 | cityId | integer | Yes | ID kota (contoh: 161 untuk Bandung) |
 
 **Response:**
+
 ```json
 {
   "data": [
@@ -272,22 +290,25 @@ GET /api/v1/cities/:cityId/districts
 <summary><b>📝 Contoh Kode</b></summary>
 
 **cURL:**
+
 ```bash
 curl -X GET "http://localhost:3000/api/v1/cities/161/districts" \
   -H "Content-Type: application/json"
 ```
 
 **JavaScript:**
+
 ```javascript
 const cityId = 161; // Bandung
 
 fetch(`http://localhost:3000/api/v1/cities/${cityId}/districts`)
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error("Error:", error));
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
 ```
 
 **Python:**
+
 ```python
 import requests
 
@@ -306,6 +327,7 @@ print(data)
 Mengambil daftar kelurahan/desa dalam kecamatan tertentu.
 
 **Request:**
+
 ```
 GET /api/v1/districts/:disId/subdistricts
 ```
@@ -316,6 +338,7 @@ GET /api/v1/districts/:disId/subdistricts
 | disId | integer | Yes | ID kecamatan (contoh: 2460 untuk Coblong) |
 
 **Response:**
+
 ```json
 {
   "data": [
@@ -336,22 +359,25 @@ GET /api/v1/districts/:disId/subdistricts
 <summary><b>📝 Contoh Kode</b></summary>
 
 **cURL:**
+
 ```bash
 curl -X GET "http://localhost:3000/api/v1/districts/2460/subdistricts" \
   -H "Content-Type: application/json"
 ```
 
 **JavaScript:**
+
 ```javascript
 const disId = 2460; // Coblong
 
 fetch(`http://localhost:3000/api/v1/districts/${disId}/subdistricts`)
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error("Error:", error));
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
 ```
 
 **Python:**
+
 ```python
 import requests
 
@@ -370,6 +396,7 @@ print(data)
 Mengambil daftar kode pos dalam kelurahan/desa tertentu.
 
 **Request:**
+
 ```
 GET /api/v1/subdistricts/:subdisId/postal-codes
 ```
@@ -380,11 +407,10 @@ GET /api/v1/subdistricts/:subdisId/postal-codes
 | subdisId | integer | Yes | ID kelurahan (contoh: 26917 untuk Dago) |
 
 **Response:**
+
 ```json
 {
-  "data": [
-    { "postal_code": "40135" }
-  ],
+  "data": [{ "postal_code": "40135" }],
   "meta": {
     "count": 1,
     "subdisId": 26917,
@@ -398,22 +424,25 @@ GET /api/v1/subdistricts/:subdisId/postal-codes
 <summary><b>📝 Contoh Kode</b></summary>
 
 **cURL:**
+
 ```bash
 curl -X GET "http://localhost:3000/api/v1/subdistricts/26917/postal-codes" \
   -H "Content-Type: application/json"
 ```
 
 **JavaScript:**
+
 ```javascript
 const subdisId = 26917; // Dago
 
 fetch(`http://localhost:3000/api/v1/subdistricts/${subdisId}/postal-codes`)
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error("Error:", error));
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
 ```
 
 **Python:**
+
 ```python
 import requests
 
@@ -432,6 +461,7 @@ print(data)
 Mencari wilayah berdasarkan nama atau kode pos. Mendukung pagination.
 
 **Request:**
+
 ```
 GET /api/v1/search?q=<query>&page=<page>&limit=<limit>
 ```
@@ -444,6 +474,7 @@ GET /api/v1/search?q=<query>&page=<page>&limit=<limit>
 | limit | integer | No | Hasil per halaman (default: 20, max: 100) |
 
 **Response:**
+
 ```json
 {
   "data": [
@@ -476,26 +507,29 @@ GET /api/v1/search?q=<query>&page=<page>&limit=<limit>
 <summary><b>📝 Contoh Kode</b></summary>
 
 **cURL:**
+
 ```bash
 curl -X GET "http://localhost:3000/api/v1/search?q=dago&limit=10&page=1" \
   -H "Content-Type: application/json"
 ```
 
 **JavaScript:**
+
 ```javascript
 const params = new URLSearchParams({
   q: "dago",
   limit: 10,
-  page: 1
+  page: 1,
 });
 
 fetch(`http://localhost:3000/api/v1/search?${params}`)
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error("Error:", error));
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
 ```
 
 **Python:**
+
 ```python
 import requests
 
@@ -518,11 +552,13 @@ print(data)
 Mengecek status kesehatan API.
 
 **Request:**
+
 ```
 GET /api/v1/health
 ```
 
 **Response:**
+
 ```json
 {
   "data": {
@@ -580,13 +616,13 @@ Semua response menggunakan format standar:
 
 ### HTTP Status Codes
 
-| Code | Status | Deskripsi |
-|------|--------|-----------|
-| 200 | OK | Request berhasil |
-| 400 | Bad Request | Parameter tidak valid |
-| 404 | Not Found | Resource tidak ditemukan |
-| 429 | Too Many Requests | Rate limit exceeded |
-| 500 | Internal Server Error | Server error |
+| Code | Status                | Deskripsi                |
+| ---- | --------------------- | ------------------------ |
+| 200  | OK                    | Request berhasil         |
+| 400  | Bad Request           | Parameter tidak valid    |
+| 404  | Not Found             | Resource tidak ditemukan |
+| 429  | Too Many Requests     | Rate limit exceeded      |
+| 500  | Internal Server Error | Server error             |
 
 ---
 

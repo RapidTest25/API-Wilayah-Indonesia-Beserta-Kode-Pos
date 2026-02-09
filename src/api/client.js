@@ -1,8 +1,11 @@
 import axios from "axios";
 
+// API Base URL - use env variable in production, proxy in development
+const API_URL = import.meta.env.VITE_API_URL || "";
+
 // Create axios instance with base configuration
 const client = axios.create({
-  baseURL: "/api/v1",
+  baseURL: `${API_URL}/api/v1`,
   timeout: 10000,
   headers: {
     "Content-Type": "application/json",
