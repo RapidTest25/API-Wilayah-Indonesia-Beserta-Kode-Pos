@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/documentation.css";
 
-const API_BASE = import.meta.env.VITE_API_URL || "https://your-api-domain.com";
+const API_BASE = import.meta.env.VITE_API_URL || "https://api-wilayah-indonesia-backend.vercel.app";
 
 const ENDPOINTS = [
   {

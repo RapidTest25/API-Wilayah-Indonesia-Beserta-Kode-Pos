@@ -4,7 +4,7 @@ import LocationPicker from "../components/LocationPicker";
 import SearchBox from "../components/SearchBox";
 import { ResultCard, SearchResultCard } from "../components/ResultCard";
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_BASE = import.meta.env.VITE_API_URL || "https://api-wilayah-indonesia-backend.vercel.app";
 
 const ENDPOINTS = [
   { method: "GET", path: "/api/v1/provinces", desc: "Daftar semua provinsi" },

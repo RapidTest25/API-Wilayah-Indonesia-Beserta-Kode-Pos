@@ -81,14 +81,14 @@ GET /api/v1/provinces
 **cURL:**
 
 ```bash
-curl -X GET "http://localhost:3000/api/v1/provinces" \
+curl -X GET "https://api-wilayah-indonesia-backend.vercel.app/api/v1/provinces" \
   -H "Content-Type: application/json"
 ```
 
 **JavaScript (Fetch):**
 
 ```javascript
-fetch("http://localhost:3000/api/v1/provinces")
+fetch("https://api-wilayah-indonesia-backend.vercel.app/api/v1/provinces")
   .then((response) => response.json())
   .then((data) => console.log(data))
   .catch((error) => console.error("Error:", error));
@@ -100,7 +100,7 @@ fetch("http://localhost:3000/api/v1/provinces")
 const axios = require("axios");
 
 axios
-  .get("http://localhost:3000/api/v1/provinces")
+  .get("https://api-wilayah-indonesia-backend.vercel.app/api/v1/provinces")
   .then((response) => {
     console.log(response.data);
   })
@@ -114,7 +114,7 @@ axios
 ```php
 <?php
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, "http://localhost:3000/api/v1/provinces");
+curl_setopt($ch, CURLOPT_URL, "https://api-wilayah-indonesia-backend.vercel.app/api/v1/provinces");
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     "Content-Type: application/json"
@@ -132,7 +132,7 @@ print_r($data);
 ```python
 import requests
 
-response = requests.get("http://localhost:3000/api/v1/provinces")
+response = requests.get("https://api-wilayah-indonesia-backend.vercel.app/api/v1/provinces")
 data = response.json()
 print(data)
 ```
@@ -147,7 +147,7 @@ import java.net.URI;
 
 HttpClient client = HttpClient.newHttpClient();
 HttpRequest request = HttpRequest.newBuilder()
-    .uri(URI.create("http://localhost:3000/api/v1/provinces"))
+    .uri(URI.create("https://api-wilayah-indonesia-backend.vercel.app/api/v1/provinces"))
     .header("Content-Type", "application/json")
     .GET()
     .build();
@@ -169,7 +169,7 @@ import (
 )
 
 func main() {
-    resp, err := http.Get("http://localhost:3000/api/v1/provinces")
+    resp, err := http.Get("https://api-wilayah-indonesia-backend.vercel.app/api/v1/provinces")
     if err != nil {
         panic(err)
     }
@@ -223,7 +223,7 @@ GET /api/v1/provinces/:provId/cities
 **cURL:**
 
 ```bash
-curl -X GET "http://localhost:3000/api/v1/provinces/12/cities" \
+curl -X GET "https://api-wilayah-indonesia-backend.vercel.app/api/v1/provinces/12/cities" \
   -H "Content-Type: application/json"
 ```
 
@@ -232,7 +232,7 @@ curl -X GET "http://localhost:3000/api/v1/provinces/12/cities" \
 ```javascript
 const provId = 12; // Jawa Barat
 
-fetch(`http://localhost:3000/api/v1/provinces/${provId}/cities`)
+fetch(`https://api-wilayah-indonesia-backend.vercel.app/api/v1/provinces/${provId}/cities`)
   .then((response) => response.json())
   .then((data) => console.log(data))
   .catch((error) => console.error("Error:", error));
@@ -244,7 +244,7 @@ fetch(`http://localhost:3000/api/v1/provinces/${provId}/cities`)
 import requests
 
 prov_id = 12  # Jawa Barat
-response = requests.get(f"http://localhost:3000/api/v1/provinces/{prov_id}/cities")
+response = requests.get(f"https://api-wilayah-indonesia-backend.vercel.app/api/v1/provinces/{prov_id}/cities")
 data = response.json()
 print(data)
 ```
@@ -292,7 +292,7 @@ GET /api/v1/cities/:cityId/districts
 **cURL:**
 
 ```bash
-curl -X GET "http://localhost:3000/api/v1/cities/161/districts" \
+curl -X GET "https://api-wilayah-indonesia-backend.vercel.app/api/v1/cities/161/districts" \
   -H "Content-Type: application/json"
 ```
 
@@ -301,7 +301,7 @@ curl -X GET "http://localhost:3000/api/v1/cities/161/districts" \
 ```javascript
 const cityId = 161; // Bandung
 
-fetch(`http://localhost:3000/api/v1/cities/${cityId}/districts`)
+fetch(`https://api-wilayah-indonesia-backend.vercel.app/api/v1/cities/${cityId}/districts`)
   .then((response) => response.json())
   .then((data) => console.log(data))
   .catch((error) => console.error("Error:", error));
@@ -313,7 +313,7 @@ fetch(`http://localhost:3000/api/v1/cities/${cityId}/districts`)
 import requests
 
 city_id = 161  # Bandung
-response = requests.get(f"http://localhost:3000/api/v1/cities/{city_id}/districts")
+response = requests.get(f"https://api-wilayah-indonesia-backend.vercel.app/api/v1/cities/{city_id}/districts")
 data = response.json()
 print(data)
 ```
@@ -361,7 +361,7 @@ GET /api/v1/districts/:disId/subdistricts
 **cURL:**
 
 ```bash
-curl -X GET "http://localhost:3000/api/v1/districts/2460/subdistricts" \
+curl -X GET "https://api-wilayah-indonesia-backend.vercel.app/api/v1/districts/2460/subdistricts" \
   -H "Content-Type: application/json"
 ```
 
@@ -370,7 +370,7 @@ curl -X GET "http://localhost:3000/api/v1/districts/2460/subdistricts" \
 ```javascript
 const disId = 2460; // Coblong
 
-fetch(`http://localhost:3000/api/v1/districts/${disId}/subdistricts`)
+fetch(`https://api-wilayah-indonesia-backend.vercel.app/api/v1/districts/${disId}/subdistricts`)
   .then((response) => response.json())
   .then((data) => console.log(data))
   .catch((error) => console.error("Error:", error));
@@ -382,7 +382,7 @@ fetch(`http://localhost:3000/api/v1/districts/${disId}/subdistricts`)
 import requests
 
 dis_id = 2460  # Coblong
-response = requests.get(f"http://localhost:3000/api/v1/districts/{dis_id}/subdistricts")
+response = requests.get(f"https://api-wilayah-indonesia-backend.vercel.app/api/v1/districts/{dis_id}/subdistricts")
 data = response.json()
 print(data)
 ```
@@ -426,7 +426,7 @@ GET /api/v1/subdistricts/:subdisId/postal-codes
 **cURL:**
 
 ```bash
-curl -X GET "http://localhost:3000/api/v1/subdistricts/26917/postal-codes" \
+curl -X GET "https://api-wilayah-indonesia-backend.vercel.app/api/v1/subdistricts/26917/postal-codes" \
   -H "Content-Type: application/json"
 ```
 
@@ -435,7 +435,7 @@ curl -X GET "http://localhost:3000/api/v1/subdistricts/26917/postal-codes" \
 ```javascript
 const subdisId = 26917; // Dago
 
-fetch(`http://localhost:3000/api/v1/subdistricts/${subdisId}/postal-codes`)
+fetch(`https://api-wilayah-indonesia-backend.vercel.app/api/v1/subdistricts/${subdisId}/postal-codes`)
   .then((response) => response.json())
   .then((data) => console.log(data))
   .catch((error) => console.error("Error:", error));
@@ -447,7 +447,7 @@ fetch(`http://localhost:3000/api/v1/subdistricts/${subdisId}/postal-codes`)
 import requests
 
 subdis_id = 26917  # Dago
-response = requests.get(f"http://localhost:3000/api/v1/subdistricts/{subdis_id}/postal-codes")
+response = requests.get(f"https://api-wilayah-indonesia-backend.vercel.app/api/v1/subdistricts/{subdis_id}/postal-codes")
 data = response.json()
 print(data)
 ```
@@ -509,7 +509,7 @@ GET /api/v1/search?q=<query>&page=<page>&limit=<limit>
 **cURL:**
 
 ```bash
-curl -X GET "http://localhost:3000/api/v1/search?q=dago&limit=10&page=1" \
+curl -X GET "https://api-wilayah-indonesia-backend.vercel.app/api/v1/search?q=dago&limit=10&page=1" \
   -H "Content-Type: application/json"
 ```
 
@@ -522,7 +522,7 @@ const params = new URLSearchParams({
   page: 1,
 });
 
-fetch(`http://localhost:3000/api/v1/search?${params}`)
+fetch(`https://api-wilayah-indonesia-backend.vercel.app/api/v1/search?${params}`)
   .then((response) => response.json())
   .then((data) => console.log(data))
   .catch((error) => console.error("Error:", error));
@@ -538,7 +538,7 @@ params = {
     "limit": 10,
     "page": 1
 }
-response = requests.get("http://localhost:3000/api/v1/search", params=params)
+response = requests.get("https://api-wilayah-indonesia-backend.vercel.app/api/v1/search", params=params)
 data = response.json()
 print(data)
 ```
