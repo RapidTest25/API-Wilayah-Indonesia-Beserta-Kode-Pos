@@ -1,39 +1,14 @@
 # 🇮🇩 API Wilayah Indonesia
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Node.js](https://img.shields.io/badge/Node.js-22+-green.svg)](https://nodejs.org/)
-[![React](https://img.shields.io/badge/React-18.3-61dafb.svg)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-5.4-646cff.svg)](https://vitejs.dev/)
-
 REST API lengkap untuk data wilayah administratif Indonesia mulai dari **Provinsi → Kota/Kabupaten → Kecamatan → Kelurahan/Desa → Kode Pos**.
-
-> 🔗 **Backend Repository**: [API-Wilayah-Indonesia-Beserta-Kode-Pos-Backend](https://github.com/RapidTest25/API-Wilayah-Indonesia-Beserta-Kode-Pos-Backend)
 
 ---
 
 ## 📸 Screenshots
 
-### Homepage
-![Homepage](docs/images/homepage.png)
+![Homepage](public/img/1.png)
 
-### Location Picker
-![Location Picker](docs/images/location-picker.png)
-
-### API Documentation
-![API Documentation](docs/images/api-docs.png)
-
-### Search Feature
-![Search Feature](docs/images/search.png)
-
----
-
-## ✨ Fitur Utama
-
-- 🗺️ **Drill-down Navigation** - Navigasi bertingkat dari Provinsi → Kota → Kecamatan → Kelurahan → Kode Pos
-- 🔍 **Full-text Search** - Pencarian cepat berdasarkan nama wilayah atau kode pos dengan pagination
-- ⚡ **Redis Caching** - Response di-cache untuk performa tinggi (TTL: 1 jam)
-- 📖 **Dokumentasi Lengkap** - Contoh kode dalam 7 bahasa pemrograman
-- 🎨 **Modern UI** - Dark theme dengan glassmorphism design
+![API Documentation](public/img/2.png)
 
 ---
 
@@ -49,35 +24,11 @@ REST API lengkap untuk data wilayah administratif Indonesia mulai dari **Provins
 
 ---
 
-## 🚀 Quick Start
-
-### Prerequisites
-- Node.js 18+ 
-- Backend API running (see [Backend Repository](https://github.com/RapidTest25/API-Wilayah-Indonesia-Beserta-Kode-Pos-Backend))
-
-### Installation
-
-```bash
-# Clone repository
-git clone https://github.com/RapidTest25/API-Wilayah-Indonesia-Beserta-Kode-Pos.git
-cd API-Wilayah-Indonesia-Beserta-Kode-Pos
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-Frontend akan berjalan di `http://localhost:5173`
-
----
-
 ## 📡 API Endpoints
 
 ### Base URL
 ```
-http://localhost:3000/api/v1
+https://your-api-domain.com/api/v1
 ```
 
 ### Endpoints Overview
@@ -85,9 +36,9 @@ http://localhost:3000/api/v1
 | Method | Endpoint | Deskripsi |
 |--------|----------|-----------|
 | GET | `/provinces` | Daftar semua provinsi |
-| GET | `/provinces/:provId/cities` | Kota dalam provinsi |
+| GET | `/provinces/:provId/cities` | Kota/Kabupaten dalam provinsi |
 | GET | `/cities/:cityId/districts` | Kecamatan dalam kota |
-| GET | `/districts/:disId/subdistricts` | Kelurahan dalam kecamatan |
+| GET | `/districts/:disId/subdistricts` | Kelurahan/Desa dalam kecamatan |
 | GET | `/subdistricts/:subdisId/postal-codes` | Kode pos dalam kelurahan |
 | GET | `/search?q=<query>` | Pencarian wilayah |
 | GET | `/health` | Status API |
@@ -648,24 +599,7 @@ API memiliki rate limiting untuk mencegah abuse:
 
 ---
 
-## 🏗️ Tech Stack
-
-### Frontend
-- **React 18** - UI Library
-- **Vite 5** - Build Tool
-- **React Router** - Client-side Routing
-- **Axios** - HTTP Client
-
-### Backend ([Repository](https://github.com/RapidTest25/API-Wilayah-Indonesia-Beserta-Kode-Pos-Backend))
-- **Node.js 22** - Runtime
-- **Express.js** - Web Framework
-- **MongoDB Atlas** - Database
-- **Redis** - Caching
-- **Clean Architecture** - Code Structure
-
----
-
-## 🌐 Hierarki Data
+## � Hierarki Data
 
 ```
 📍 Provinsi (38)
@@ -677,49 +611,9 @@ API memiliki rate limiting untuk mencegah abuse:
 
 ---
 
-## 📦 Build for Production
-
-```bash
-# Build
-npm run build
-
-# Preview production build
-npm run preview
-```
-
----
-
-## 🐳 Docker Deployment
-
-```bash
-# Build image
-docker build -t wilayah-frontend .
-
-# Run container
-docker run -p 80:80 wilayah-frontend
-```
-
----
-
 ## 📄 License
 
 MIT License - feel free to use this project for any purpose.
-
----
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
----
-
-## 📞 Contact
-
-- GitHub: [@RapidTest25](https://github.com/RapidTest25)
 
 ---
 
