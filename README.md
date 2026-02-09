@@ -29,7 +29,7 @@ REST API lengkap untuk data wilayah administratif Indonesia mulai dari **Provins
 ### Base URL
 
 ```
-https://your-api-domain.com/api/v1
+https://api-wilayah-indonesia-backend.vercel.app/api/v1
 ```
 
 ### Endpoints Overview
